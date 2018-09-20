@@ -2,6 +2,9 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Router }   from '@angular/router';
 import { Location } from '@angular/common';
 
+declare var navigator;
+//declare var navigator.app;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +19,7 @@ export class AppComponent implements OnInit{
   	
   	ngOnInit() {
   		this.initCordovaEvents();
-  		this.router.navigate(['/home']);
+  		this.router.navigate(['/login']);
   	}
 
   	initCordovaEvents() {
@@ -24,12 +27,23 @@ export class AppComponent implements OnInit{
   	}
 
   	onBackKeyDown = (e): void => {
-		console.log(this.location.path());
-		//this.router.navigate(['/home']);
-		this.location.back();
-		/*let path = this.location.path();
-		if (path.includes('/learner/learning/container/common-container')) {
-			this.util.exitAppAndroidOnly();
-		}*/
-	}
+  		console.log(this.location.path());
+  		//this.router.navigate(['/home']);
+  		this.location.back();
+  		let path = this.location.path();
+  		if (path.includes('/home')||path.includes('/login')) {
+  			this.exitAppAndroidOnly();
+  		}
+    }
+
+    exitAppAndroidOnly() {
+        if (navigator.app) {
+            navigator.app.exitApp();
+        } else if (navigator.device) {
+            navigator.device.exitApp();
+        } else {
+            window.close();
+        }
+    }
+
 }

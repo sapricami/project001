@@ -1,26 +1,35 @@
+
+<div class="main-container-without-fixed">
+	<div class="row">
+		<div class="col">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>
+
 <!-- Grey with black text -->
-<nav class="navbar bg-dark navbar-dark fixed-top">
-  <ul class="navbar-nav">
+<nav class="bg-light navbar-light fixed-bottom" id="home-bottom-navbar">
+  <ul class="nav nav-pills nav-fill">
+    <!-- <li class="nav-item">
+      <a class="nav-link">
+        <i class="fa fa-newspaper-o"></i>
+      </a>
+    </li> -->
     <li class="nav-item">
-      <a class="nav-link left-sidebar-btn">
-        <span class="navbar-toggler-icon"></span>
+      <a class="nav-link" routerLink="/home">
+        <i class="fa fa-comments-o"></i>
       </a>
     </li>
-  </ul>
-  <ul class="navbar-nav navbar-right">
     <li class="nav-item">
-      <a class="nav-link right-sidebar-btn">
-        <span class="navbar-toggler-icon"></span>
+      <a class="nav-link" routerLink="/home/inbox">
+        <i class="fa fa-envelope-o"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/home/profile">
+        <i class="fa fa-user-o"></i>
       </a>
     </li>
   </ul>
 </nav>
 
-<div class="container main-container-with-fixed-nav">
-	<div class="row">
-		<div class="col text-right">
-			<a routerLink="/profile" class="btn btn-primary">Profile</a>
-			<div style="height: 900px;"></div>
-		</div>
-	</div>
-</div>

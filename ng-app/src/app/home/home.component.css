@@ -1,0 +1,17 @@
+.main-container-with-fixed-nav{
+  margin-top: 80px;
+}
+.main-container-without-fixed{
+  margin-top: 0px;
+}
+
+#home-bottom-navbar{
+    border-top: 1px solid #c5c5c5;
+}
+#home-bottom-navbar .nav li{
+
+}
+#home-bottom-navbar .nav li a{
+    font-size: 22px;
+    color: #999999;
+}

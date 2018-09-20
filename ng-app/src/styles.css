@@ -1,37 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
-#spinner {
-  width: 40px;
-  height: 40px;
-  margin: 100px auto;
-  background-color: #333;
+ 
+#spinner.lds-ring {
+  display: block;
+  position: relative;
+  width: 64px;
+  height: 64px;
 
-  border-radius: 100%;  
-  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
+  margin-top: 45vh;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-@-webkit-keyframes sk-scaleout {
-  0% { -webkit-transform: scale(0) }
+#spinner.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #69c;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #69c transparent transparent transparent;
+}
+#spinner.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+#spinner.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+#spinner.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
   100% {
-    -webkit-transform: scale(1.0);
-    opacity: 0;
+    transform: rotate(360deg);
   }
-}
-
-@keyframes sk-scaleout {
-  0% { 
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  } 100% {
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
-    opacity: 0;
-  }
-}
-
-.main-container-with-fixed-nav{
-  margin-top: 80px;
-}
-.main-container-without-fixed{
-  margin-top: 20px;
 }

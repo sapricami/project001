@@ -5,16 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-
 import { AppRoutingModule } from './app-routing.module';
+
+//import { HomeContainerComponent } from './home/home.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ProfileComponent
+    //HomeContainerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
